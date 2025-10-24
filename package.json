@@ -1,0 +1,16 @@
+{
+  "name": "pet_adoption_platform_cats_and_dogs_wait_volunteer_and_care_tracking",
+  "version": "1.0.0",
+  "description": "This project is being proposed as a capstone idea, with plans for continuous improvement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mongo": "^0.1.0"
+  }
+}
