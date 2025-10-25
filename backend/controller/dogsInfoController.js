@@ -1,23 +1,23 @@
 const { getCollection } = require('../config/db');
 
 function dogsCollection() {
-  return getCollection('dogsInfo'); 
+  return getCollection('dogsInfo');
 }
 
-async function insertData(data) {
+async function insertDogInfo(data) {
   return await dogsCollection().insertOne(data);
 }
 
-async function deleteData(id) {
+async function deleteDogInfo(id) {
   return await dogsCollection().deleteOne({ id });
 }
 
-async function filtering(id) {
+async function findDogInfo(id) {
   return await dogsCollection().findOne({ id });
 }
 
-async function updateData(id, updateData) {
+async function updateDogInfo(id, updateData) {
   return await dogsCollection().updateOne({ id }, { $set: updateData });
 }
 
-module.exports = { insertData, deleteData, filtering, updateData };
+module.exports = { insertDogInfo, deleteDogInfo, findDogInfo, updateDogInfo };
