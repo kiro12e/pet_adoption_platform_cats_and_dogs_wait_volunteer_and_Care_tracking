@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 101</title>
+    <link rel="stylesheet" href="/frontend/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/frontend//css/base/general.css">
+</head>
+<body>
+
+<!--nav bar-->
+    <nav class="navbar navbar-expand-lg bg-warning navbar-warning">
+        <div class="container" id="header">
+            <a href="#" class="navbar-brand fs-3 fw-medium text-white" id="petaddoptionnav">Pet Adoption</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link fs-5 me-4 text-white">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#stats" class="nav-link fs-5 me-4 text-white">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link fs-5 me-4 text-white">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn bg-white fs-6 fw-medium" style="padding-left: 25px; padding-right: 25px;">Sign in</button>
+            </div>
+        </div>
+    </nav>
+
+<section class="bg-light text-light p-5 text-center text-sm-start" id="home">
+    <div class="container" id="front">
+        <div class="d-sm-flex p-5 justify-content-between" >
+            <div class="" id="info-text">
+                <h1 class="text-dark" id="headtext">Do you want to adopt a pet?</h1>
+                <p class="text-dark" id="subheadtext">Every pet deserve a home. Your journey together starts here.</p>
+                <button class="btn btn-primary btn-lg text-light">Read more</button>
+            </div>
+             <img class="img-fluid  d-none d-md-block" id="dog-img" src="/frontend/assets/image/photo/dogNcat.png" alt="please reload">
+            <div>         
+            </div> 
+        </div>  
+    </div>
+</section>
+
+<section id="stats" class="py-5" style="background-color: rgba(238, 154, 10,0.6); ">
+  <div class="container">
+    <div class="row g-4 text-center">
+
+      <div class="col-12 col-md-3">
+        <button class="btn p-0 border-0">
+          
+          <img src="/frontend/assets/fonts/icon/home.png" alt="Home" class="img-fluid" id="petadoptedbtn">
+        </button>
+          <h3 style="padding: 7px;">2,847</h3>
+          <h3 style="padding: 7px;">Pets Adopted</h3>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <button class="btn p-0 border-0">
+          <img src="/frontend/assets/fonts/icon/working-together.png" alt="Working Together" class="img-fluid" id="petadoptedbtn">
+        </button>
+          <h3 style="padding: 7px;">158</h3>
+          <h3 style="padding: 7px;">Active Volunteer</h3>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <button class="btn p-0 border-0">
+          <img src="/frontend/assets/fonts/icon/shelter.png" alt="Shelter" class="img-fluid" id="petadoptedbtn">
+        </button>
+           <h3 style="padding: 7px;">47</h3>
+          <h3 style="padding: 7px;">Partner Shelter</h3>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <button class="btn p-0 border-0">
+          <img src="/frontend/assets/fonts/icon/calendar.png" alt="Calendar" class="img-fluid" id="petadoptedbtn">
+        </button>
+        <h3 style="padding: 7px;">24/7</h3>
+        <h3 style="padding: 7px;">Care / Support</h3>
+      </div>
+
+    </div>
+  </div>
+</section >
+
+<section class="p-5">
+  <div class="container">
+    <div class="row mb-4 text-center">
+      <h2 style="font-size: 60px;">How We Help</h2>
+      <p style="font-size: 23px; margin-bottom: 30px;">
+        Our platform connects loving families with rescued pets through a safe,<br> 
+        transparent, and caring adoption process.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center text-center">
+      <div class="col-12 col-md-4">
+        <div class="card p-3 h-100" style="background-color: #FFD7D8;">
+          <div class="card-body">
+            <img src="/frontend/assets/fonts/icon/heart.png" alt="" class="card-icon mb-3">
+            <h4 style="font-size: 40px;">Find Your Perfect Pet</h4>
+            <p style="font-size: 20px;">
+              Browse through our loving animals waiting for their forever homes. Each pet is health-checked and ready for adoption.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card p-3 h-100" style="background-color: #E2D7FF;">
+          <div class="card-body">
+            <img src="/frontend/assets/fonts/icon/working-together.png" alt="" class="card-icon mb-3">
+            <h4 style="font-size: 40px;">Volunteer & Make Impact</h4>
+            <p style="font-size: 20px;">
+              Join our community of caring volunteers. Help with pet care, events, and spreading awareness in your community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card p-3 h-100" style="background-color: #DAFFD7;">
+          <div class="card-body">
+            <img src="/frontend/assets/fonts/icon/shelter.png" alt="" class="card-icon mb-3">
+            <h4 style="font-size: 40px;">Support Our Mission</h4>
+            <p style="font-size: 20px;">
+              Your donations help us provide medical care, food, and shelter for rescued animals while they wait for homes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="" class="py-5 justify-content-center" style="background-color: rgba(238, 154, 10,0.6); ">
+    <div class="container">
+        <div class="row">
+            <h2 style="margin-top: 80px; margin-bottom: 20px; width: bolder; font-size: 60px;"> <center>Happy Families</center> </h2>
+        </div>
+
+        <div class="row g-4 justify-content-center gap-5  p-3 text-center">
+            <div class="col-12 col-md-3 mb-4">
+                <img src="/frontend//assets/image/photo/familypet.jpg" alt="" class="p-5" id="petphoto">
+            </div>
+
+            <div class="col-12 col-md-3 mb-4">
+                <img src="/frontend//assets/image/photo/kidpet.jpg" alt="" class="p-5" id="petphoto">
+            </div>
+
+            <div class="col-12 col-md-3 mb-4">
+                <img src="/frontend//assets/image/photo/kidspet.jpg" alt="" class="p-5" id="petphoto">
+            </div>
+        </div>
+</section>
+
+<section id="contact" class="py-5 justify-content-center" style="background-color: rgba(238, 154, 10,1); ">
+    <div class="container">
+        <div class="row text-center">
+            <h2 style="margin-top: 80px; margin-bottom: 20px; width: bolder; font-size: 60px;"> <center>Ready to Save a Life?</center> </h2>
+            <p>  <center style="font-size: 23px; margin-bottom: 30px;">Every pet deserves love, care, and a family. Join our community and make a difference in an animal's life today.</center></p>
+        </div>
+        <div class="row justify-content-center text-center"    >
+      
+            <div class="col-12 col-md-3 mb-4">
+                  <button class="btn" id="endbtn">Start Adopting</button>
+            </div>
+            <div class="col-12 col-md-3 mb-4">
+                <button class="btn" id="endbtn">Volunteer</button> 
+            </div>
+         
+        </div>
+    </div>
+</section>
+    <script src="/frontend/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body> 
+</html>
