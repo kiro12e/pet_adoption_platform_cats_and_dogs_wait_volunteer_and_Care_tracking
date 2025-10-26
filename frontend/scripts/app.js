@@ -3,5 +3,5 @@ import { ToggleLogin } from './utils/toggleLoginForm.js';
 
 
 toggleButton(); 
-const LoginToggler = new toggleButton();
-LoginToggler.ToggleLoginButton();
+const LoginToggler = new ToggleLogin();
+LoginToggler.ToggleLoginButton()

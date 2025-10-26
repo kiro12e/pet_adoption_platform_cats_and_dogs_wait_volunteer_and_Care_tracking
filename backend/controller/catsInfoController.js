@@ -1,4 +1,4 @@
-const { getCollection } = require('../config/db');
+const { getCollection } = require('../config/pets/db');
 
 function catsCollection() {
   return getCollection('catsInfo');
