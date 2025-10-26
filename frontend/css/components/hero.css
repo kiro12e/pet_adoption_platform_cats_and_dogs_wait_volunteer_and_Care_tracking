@@ -1,0 +1,29 @@
+#front {
+    height: 800px;
+    padding: 20px;
+}
+
+#dog-img {
+    max-width: 900px;
+    max-height: 700px;
+    margin-left: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#headtext {
+    margin-top: 130px;
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+#subheadtext {
+    font-size: 24px;
+}
+
+#btnReadmore {
+    height: 65px;
+    width: 200px;
+    margin-top: 30px;
+}

@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 101</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
     
+=======
+    <link rel="stylesheet" href="/frontend/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/frontend//css/base/general.css">
+>>>>>>> 915080937c436f2b6ca3bf562565101fb9991928
 </head>
 <body>
 
@@ -36,18 +41,21 @@
     </nav>
 <!--homepage-->
 <section class="bg-light text-light p-5 text-center text-sm-start" id="home">
-    <div class="container" id="front">
-        <div class="d-sm-flex p-5 justify-content-between" >
-            <div class="" id="info-text">
-                <h1 class="text-dark" id="headtext">Do you want to adopt a pet?</h1>
-                <p class="text-dark" id="subheadtext">Every pet deserve a home. Your journey together starts here.</p>
-                <button class="btn btn-primary btn-lg text-light">Read more</button>
-            </div>
-             <img class="img-fluid  d-none d-md-block" id="dog-img" src="/image/photo/dogNcat.png" alt="please reload">
-            <div>         
-            </div> 
-        </div>  
+  <div class="container" id="front">
+  <div class="d-sm-flex p-5 justify-content-between align-items-center">
+    
+    <div id="info-text">
+      <h1 class="text-dark" id="headtext">Do you want to adopt a pet?</h1>
+      <p class="text-dark" id="subheadtext">Every pet deserve a home. Your journey together starts here.</p>
+      <button class="btn btn-primary btn-lg text-light">Read more</button>
     </div>
+    
+    <div class="image-wrapper d-none d-md-block">
+      <img class="img-fluid" id="dog-img" src="/frontend/assets/image/photo/dogNcat.png" alt="please reload">
+    </div>
+
+  </div>
+</div>
 </section>
 
 <!--status  pweding lagyan to ng specific talaga na meron tayo sa database-->
@@ -57,7 +65,8 @@
 
       <div class="col-12 col-md-3">
         <button class="btn p-0 border-0">
-          <img src="/image/icon/home.png" alt="Home" class="img-fluid" id="petadoptedbtn">
+          
+          <img src="/frontend/assets/fonts/icon/home.png" alt="Home" class="img-fluid" id="petadoptedbtn">
         </button>
           <h3 style="padding: 7px;">2,847</h3>
           <h3 style="padding: 7px;">Pets Adopted</h3>
@@ -65,7 +74,7 @@
 
       <div class="col-12 col-md-3">
         <button class="btn p-0 border-0">
-          <img src="/image/icon/working-together.png" alt="Working Together" class="img-fluid" id="petadoptedbtn">
+          <img src="/frontend/assets/fonts/icon/working-together.png" alt="Working Together" class="img-fluid" id="petadoptedbtn">
         </button>
           <h3 style="padding: 7px;">158</h3>
           <h3 style="padding: 7px;">Active Volunteer</h3>
@@ -73,7 +82,7 @@
 
       <div class="col-12 col-md-3">
         <button class="btn p-0 border-0">
-          <img src="/image/icon/shelter.png" alt="Shelter" class="img-fluid" id="petadoptedbtn">
+          <img src="/frontend/assets/fonts/icon/shelter.png" alt="Shelter" class="img-fluid" id="petadoptedbtn">
         </button>
            <h3 style="padding: 7px;">47</h3>
           <h3 style="padding: 7px;">Partner Shelter</h3>
@@ -81,7 +90,7 @@
 
       <div class="col-12 col-md-3">
         <button class="btn p-0 border-0">
-          <img src="/image/icon/calendar.png" alt="Calendar" class="img-fluid" id="petadoptedbtn">
+          <img src="/frontend/assets/fonts/icon/calendar.png" alt="Calendar" class="img-fluid" id="petadoptedbtn">
         </button>
         <h3 style="padding: 7px;">24/7</h3>
         <h3 style="padding: 7px;">Care / Support</h3>
@@ -106,7 +115,7 @@
       <div class="col-12 col-md-4">
         <div class="card p-3 h-100" style="background-color: #FFD7D8;">
           <div class="card-body">
-            <img src="/image/icon/heart.png" alt="" class="card-icon mb-3">
+            <img src="/frontend/assets/fonts/icon/heart.png" alt="" class="card-icon mb-3">
             <h4 style="font-size: 40px;">Find Your Perfect Pet</h4>
             <p style="font-size: 20px;">
               Browse through our loving animals waiting for their forever homes. Each pet is health-checked and ready for adoption.
@@ -118,7 +127,7 @@
       <div class="col-12 col-md-4">
         <div class="card p-3 h-100" style="background-color: #E2D7FF;">
           <div class="card-body">
-            <img src="/image/icon/working-together.png" alt="" class="card-icon mb-3">
+            <img src="/frontend/assets/fonts/icon/working-together.png" alt="" class="card-icon mb-3">
             <h4 style="font-size: 40px;">Volunteer & Make Impact</h4>
             <p style="font-size: 20px;">
               Join our community of caring volunteers. Help with pet care, events, and spreading awareness in your community.
@@ -130,7 +139,7 @@
       <div class="col-12 col-md-4">
         <div class="card p-3 h-100" style="background-color: #DAFFD7;">
           <div class="card-body">
-            <img src="/image/icon/shelter.png" alt="" class="card-icon mb-3">
+            <img src="/frontend/assets/fonts/icon/shelter.png" alt="" class="card-icon mb-3">
             <h4 style="font-size: 40px;">Support Our Mission</h4>
             <p style="font-size: 20px;">
               Your donations help us provide medical care, food, and shelter for rescued animals while they wait for homes.
@@ -151,15 +160,15 @@
 
         <div class="row g-4 justify-content-center gap-5  p-3 text-center">
             <div class="col-12 col-md-3 mb-4">
-                <img src="/image/photo/familypet.jpg" alt="" class="p-5" id="petphoto">
+                <img src="/frontend//assets/image/photo/familypet.jpg" alt="" class="p-5" id="petphoto">
             </div>
 
             <div class="col-12 col-md-3 mb-4">
-                <img src="/image/photo/kidpet.jpg" alt="" class="p-5 " id="petphoto">
+                <img src="/frontend//assets/image/photo/kidpet.jpg" alt="" class="p-5" id="petphoto">
             </div>
 
             <div class="col-12 col-md-3 mb-4">
-                <img src="/image/photo/kidspet.jpg" alt="" class="p-5  " id="petphoto">
+                <img src="/frontend//assets/image/photo/kidspet.jpg" alt="" class="p-5" id="petphoto">
             </div>
         </div>
 </section>
@@ -182,11 +191,15 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 
 
 
 
 
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+=======
+    <script src="/frontend/bootstrap/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 915080937c436f2b6ca3bf562565101fb9991928
 </body> 
 </html>
