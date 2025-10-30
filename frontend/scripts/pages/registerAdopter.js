@@ -49,17 +49,18 @@ export class SignupForm {
   }
 
   async fetchAdopterData(data) {
-     try{
-        const res = await fetch('http://127.0.0.1:5500/frontend/pages/registration.html',{
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-      });
+  try {
+    const res = await fetch('http://localhost:3000/api/adopters/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-       const result = await res.json();
-       console.log(result);
-     }catch(err){
-        console.error('connection Error', err.message)
-     }
+    const result = await res.json();
+    console.log('Signup response:', result);
+  } catch (err) {
+    console.error('Connection error:', err.message);
   }
+}
+
 }

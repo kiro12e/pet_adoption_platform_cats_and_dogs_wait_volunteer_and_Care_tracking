@@ -1,22 +1,21 @@
-const mysql = require('mysql');
+const mysql = require('mysql2/promise');
 
 async function UserDb() {
-    try{
-        const connection = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '123456',
-        database: 'stray_cats_dog_adoption',
-
-        
+  try {
+    const pool = mysql.createPool({
+      host: 'localhost',
+      user: 'root',
+      password: '123456',
+      database: 'stray_cats_dog_adoption',
+      waitForConnections: true,
+      connectionLimit: 10,
+      queueLimit: 0
     });
-    }catch(err){
-        console.error('Connection error', err.message);
-    }
+
+    return pool;
+  } catch (err) {
+    console.error('Connection error:', err.message);
+  }
 }
 
-async function getTableAdopters(table) {
-    mysql.gettable
-}
-
-module.exports = {UserDb};
+module.exports = { UserDb };
