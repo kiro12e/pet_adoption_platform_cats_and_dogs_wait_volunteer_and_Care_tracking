@@ -1,6 +1,7 @@
 export class SignupForm {
   constructor() {
-    this.petAdopterData = {
+    // mapping from form field names to API property names
+    this.fieldMap = {
       adopterFName: 'adopter_first_name',
       adopterLName: 'adopter_last_name',
       adopterEmail: 'adopter_email',
@@ -8,59 +9,78 @@ export class SignupForm {
       adopterPassword: 'adopter_password',
       livingSituation: 'living_situation'
     };
-
-    this.petAdopterProfile = {
-      petExperience: 'pet_experience'
-    };
-
-    this.petAdopterConsents = {
-      adopterConsents: 'adopter_consents'
-    };
   }
 
-  signupButton(data) {
-    document.getElementById('signupForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
+  signupButton() {
+    const form = document.getElementById('signupForm');
+    if (!form) return;
 
-      const form = e.target;
+    // feedback element
+    let msgEl = document.getElementById('signupMessage');
+    if (!msgEl) {
+      msgEl = document.createElement('div');
+      msgEl.id = 'signupMessage';
+      form.appendChild(msgEl);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       const formData = new FormData(form);
 
-      const adopter = {};
-      for (const key in this.petAdopterData) {
-        adopter[key] = formData.get(this.petAdopterData[key]);
+      const payload = {
+        adopterFName: formData.get(this.fieldMap.adopterFName),
+        adopterLName: formData.get(this.fieldMap.adopterLName),
+        adopterEmail: formData.get(this.fieldMap.adopterEmail),
+        adopterPhone: formData.get(this.fieldMap.adopterPhone),
+        adopterPassword: formData.get(this.fieldMap.adopterPassword),
+        livingSituation: formData.get(this.fieldMap.livingSituation),
+        petExperience: formData.getAll('pet_experience'),
+        consents: formData.getAll('adopter_consents')
+      };
+
+      // Basic client-side validation
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!payload.adopterFName || !payload.adopterLName) {
+        showMessage('Please enter your full name.', 'danger');
+        return;
+      }
+      if (!emailRe.test(payload.adopterEmail)) {
+        showMessage('Please enter a valid email address.', 'danger');
+        return;
+      }
+      if (!payload.adopterPassword || payload.adopterPassword.length < 6) {
+        showMessage('Password must be at least 6 characters.', 'danger');
+        return;
       }
 
-      const adopterPro = {
-        petExperience: formData.getAll(this.petAdopterProfile.petExperience)
-      };
+      // send flat payload that matches backend expectations
+      try {
+        const res = await fetch('http://localhost:3000/api/adopters/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
 
-      const adopterConsents = {
-        consents: formData.getAll(this.petAdopterConsents.adopterConsents)
-      };
-
-      const data = {
-        adopter,
-        adopterPro,
-        adopterConsents
-      };
-
-      await this.fetchAdopterData(data)
-    });
-  }
-
-  async fetchAdopterData(data) {
-  try {
-    const res = await fetch('http://localhost:3000/api/adopters/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+        const result = await res.json();
+        if (res.ok) {
+          showMessage(result.message || 'Registration successful', 'success');
+          form.reset();
+        } else {
+          showMessage(result.message || result.error || 'Registration failed', 'danger');
+        }
+        console.log('Signup response:', result);
+      } catch (err) {
+        console.error('Connection error:', err);
+        showMessage('Unable to connect to server. Please try again later.', 'danger');
+      }
     });
 
-    const result = await res.json();
-    console.log('Signup response:', result);
-  } catch (err) {
-    console.error('Connection error:', err.message);
+    function showMessage(text, type = 'info') {
+      msgEl.innerText = text;
+      msgEl.className = '';
+      msgEl.classList.add('alert');
+      msgEl.classList.add(type === 'success' ? 'alert-success' : type === 'danger' ? 'alert-danger' : 'alert-info');
+      msgEl.setAttribute('role', 'alert');
+    }
   }
-}
-
 }
