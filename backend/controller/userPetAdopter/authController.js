@@ -1,4 +1,3 @@
-// Controller delegates to service layer to follow cleaner architecture.
 const adopterService = require('../../services/adopterService');
 
 function validateEmail(email) {

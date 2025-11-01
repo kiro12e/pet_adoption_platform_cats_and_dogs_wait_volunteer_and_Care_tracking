@@ -1,7 +1,3 @@
-/**
- * Repository layer for adopter-related DB operations.
- * These functions perform only SQL operations and return results.
- */
 async function findAdopterByEmail(connOrPool, email) {
   // connOrPool can be either a connection (has execute) or a pool (has execute via getConnection)
   if (connOrPool.execute) {
@@ -32,6 +28,7 @@ async function insertAdopterProfile(conn, adopterId, livingSituation, petExperie
     [adopterId, livingSituation || null, petExperienceValue]
   );
 }
+
 
 async function insertAdopterConsents(conn, adopterId, agreed_terms, consent_background_check, wants_updates) {
   await conn.execute(
