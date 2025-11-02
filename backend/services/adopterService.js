@@ -34,7 +34,7 @@ async function signUp(payload) {
     await conn.beginTransaction();
 
     // email uniqueness
-    const existing = await repo.findAdopterByEmail(conn, adopterEmail);
+    const existing = await repo.findAdopterByEmailcons(conn, adopterEmail);
     if (existing && existing.length) {
       await conn.rollback();
       conn.release();

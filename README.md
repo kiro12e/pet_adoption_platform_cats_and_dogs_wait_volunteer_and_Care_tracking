@@ -19,3 +19,7 @@ git push origin main
 
 //pull
 git pull origin main
+
+
+//To run this Server
+node backend/app.js

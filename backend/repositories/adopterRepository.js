@@ -29,7 +29,6 @@ async function insertAdopterProfile(conn, adopterId, livingSituation, petExperie
   );
 }
 
-
 async function insertAdopterConsents(conn, adopterId, agreed_terms, consent_background_check, wants_updates) {
   await conn.execute(
     `INSERT INTO adopter_consents (adopter_id, agreed_terms, consent_background_check, wants_updates) VALUES (?, ?, ?, ?)`,
