@@ -1,9 +1,9 @@
 const mysql = require('mysql2/promise');
 
 /**
- * Creates and returns a MySQL pool using environment variables.
- * Expected env:
- *  DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_CONNECTION_LIMIT
+  Creates and returns a MySQL pool using environment variables.
+  Expected env:
+   DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_CONNECTION_LIMIT
  */
 async function UserDb() {
   try {

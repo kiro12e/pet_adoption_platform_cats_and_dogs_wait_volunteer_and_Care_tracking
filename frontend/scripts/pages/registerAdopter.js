@@ -40,6 +40,9 @@ export class SignupForm {
 
       // Basic client-side validation
       const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      const re = /^(\+639|09)\d{9}$/;
+
       if (!payload.adopterFName || !payload.adopterLName) {
         showMessage('Please enter your full name.', 'danger');
         return;
@@ -51,6 +54,10 @@ export class SignupForm {
       if (!payload.adopterPassword || payload.adopterPassword.length < 6) {
         showMessage('Password must be at least 6 characters.', 'danger');
         return;
+      }
+     if (!re.test(payload.volunteerPhone) || !payload.adopterPhone.length === 11){
+      this.showMessage('Phone number must start with 09 and have exactly 11 digits', 'danger');
+      return;
       }
 
       // send flat payload that matches backend expectations
