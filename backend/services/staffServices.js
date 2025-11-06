@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const { UserDb } = require('../config/user/userDatabase');
 const staffRepository = require('../../backend/repositories/staffRepository');
 
-class StaffService {
+export class StaffService {
     constructor(payload) {
         const {
             staffFName,
@@ -90,6 +90,30 @@ class StaffService {
             consentsArray.wants_updates
         );
     }
+        async handlerFetchingBackend(load, staffForm) {
+        try {
+        const res = await fetch('http://localhost:3000/api/staff/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(load)
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+            this.showMessage(result.message || 'Registration successful!', 'success');
+            volunteerForm.reset();
+        } else {
+            this.showMessage(result.message || result.error || 'Registration failed.', 'danger');
+        }
+
+        console.log('Signup response:', result);
+        } catch (err) {
+        console.error('Connection error', err);
+        this.showMessage('Unable to connect to server. Please try again later.', 'danger');
+        }
+    }
+
 
     async staffLogin() {
         const pool = await UserDb();
@@ -111,6 +135,5 @@ class StaffService {
 
         return { staffID: user.id, name: `${user.first_name} ${user.last_name}` };
     }
-}
 
-module.exports = StaffService;
+}

@@ -13,6 +13,7 @@ export class VolunteerSignUp {
   }
 
   volunteerSignUp() {
+    //Get the signup to the 
     const volunteerForm = document.querySelector('.js-volunteer-signup');
     if (!volunteerForm) return;
 

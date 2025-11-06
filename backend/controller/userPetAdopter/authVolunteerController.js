@@ -2,7 +2,7 @@ const volunteerService = require('../../services/volunteerService');
 const bcrypt = require('bcryptjs');
 
 class VolunteerController {
-  // ✅ Helper validation methods
+  //Helper validation methods
   validateEmail(volunteerEmail) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
     return re.test(String(volunteerEmail || '').toLowerCase());
@@ -13,7 +13,7 @@ class VolunteerController {
     return re.test(String(volunteerPhone || ''));
   }
 
-  // ✅ Signup handler
+  //Signup handler
   async volSignUser(req, res) {
     const load = req.body || {};
     if (!load.volunteerFName || !load.volunteerLName || !load.volunteerPhone || !load.volunteerPassword) {
@@ -49,7 +49,7 @@ class VolunteerController {
     }
   }
 
-  // ✅ Login handler
+  // Login handler
   async volLoginUser(req, res) {
     const { volunteerEmail, volunteerPassword } = req.body || {};
     if (!volunteerEmail || !volunteerPassword) {
