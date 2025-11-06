@@ -60,7 +60,7 @@ export class SignupForm {
       return;
       }
 
-      // send flat payload that matches backend expectations
+      // send flat load that matches backend expectations
       try {
         const res = await fetch('http://localhost:3000/api/adopters/signup', {
           method: 'POST',

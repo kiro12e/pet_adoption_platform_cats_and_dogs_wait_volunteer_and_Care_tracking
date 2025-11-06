@@ -6,7 +6,7 @@ function validateEmail(email) {
 }
 
 function validatePhone(phone) {
-  const re = /^[+()\d\s-]{7,20}$/;
+  const re = /^[+()\d\s-]{7,20}$/ || /^(\+639|09)\d{9}$/;
   return re.test(String(phone || ''));
 }
 

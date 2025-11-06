@@ -1,11 +1,13 @@
 const express = require('express');
 const { signUpUser, loginUser } = require('../../controller/userPetAdopter/authController');
-const { volSignUser, volLoginUser} = require ('../../controller/userPetAdopter/authVolunteerController')
+const volunteerController = require('../../controller/volunteerController');
 
 function createAuthRouter() {
   const router = express.Router();
-  router.post('/signup', signUpUser, volSignUser);
-  router.post('/login', loginUser, volLoginUser);
+
+  router.post('/signup', signUpUser, (req, res) => volunteerController.volSignUser(req, res));
+  router.post('/login', loginUser, (req, res) => volunteerController.volLoginUser(req, res));
+
   return router;
 }
 
