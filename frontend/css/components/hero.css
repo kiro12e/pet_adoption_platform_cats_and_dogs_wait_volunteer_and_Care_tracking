@@ -27,3 +27,7 @@
     width: 200px;
     margin-top: 30px;
 }
+
+.staff-alert-urgent { background-color: #d9534f; }
+.staff-alert-medical { background-color: #f0ad4e; }
+.staff-alert-update { background-color: #6f42c1; }

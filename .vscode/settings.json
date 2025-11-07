@@ -15,5 +15,6 @@
             "database": "stray_cats_dog_adoption",
             "password": "123456"
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

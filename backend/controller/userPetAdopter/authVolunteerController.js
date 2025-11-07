@@ -1,8 +1,6 @@
-const volunteerService = require('../../services/volunteerService');
-const bcrypt = require('bcryptjs');
+const VolunteerService = require('../../services/volunteerService');
 
 class VolunteerController {
-  //Helper validation methods
   validateEmail(volunteerEmail) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
     return re.test(String(volunteerEmail || '').toLowerCase());
@@ -13,7 +11,6 @@ class VolunteerController {
     return re.test(String(volunteerPhone || ''));
   }
 
-  //Signup handler
   async volSignUser(req, res) {
     const load = req.body || {};
     if (!load.volunteerFName || !load.volunteerLName || !load.volunteerPhone || !load.volunteerPassword) {
@@ -37,19 +34,17 @@ class VolunteerController {
     }
 
     try {
-      const service = new volunteerService(load);
+      const service = new VolunteerService(load);
       await service.volunteerSignUp();
       return res.status(200).json({ success: true, message: 'Successful signup' });
     } catch (err) {
-      const status = err && err.status ? err.status : 500;
-      return res.status(status).json({
+      return res.status(err.status || 500).json({
         success: false,
-        message: err && err.message ? err.message : 'Failed to create account'
+        message: err.message || 'Failed to create account'
       });
     }
   }
 
-  // Login handler
   async volLoginUser(req, res) {
     const { volunteerEmail, volunteerPassword } = req.body || {};
     if (!volunteerEmail || !volunteerPassword) {
@@ -57,17 +52,16 @@ class VolunteerController {
     }
 
     try {
-      const service = new volunteerService();
+      const service = new VolunteerService();
       const result = await service.VolunteerLogin({ volunteerEmail, volunteerPassword });
       return res.status(200).json({ success: true, message: 'Login successful', ...result });
     } catch (err) {
-      const status = err && err.status ? err.status : 401;
-      return res.status(status).json({
+      return res.status(err.status || 401).json({
         success: false,
-        message: err && err.message ? err.message : 'Failed to login your account'
+        message: err.message || 'Failed to login your account'
       });
     }
   }
 }
 
-module.exports = new VolunteerController();
+module.exports = VolunteerController;

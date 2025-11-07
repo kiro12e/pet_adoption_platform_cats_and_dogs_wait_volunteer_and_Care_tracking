@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Dashboard</title>
+  <link rel="stylesheet" href="/frontend/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/frontend/css/base/general.css">
+
+</head>
+<body class="bg-light">
+
+
+  <nav class="navbar navbar-expand-lg staff-navbar-gradient navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">🐾 Staff Dashboard</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#staffNavbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="staffNavbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link fw-medium" href="#">Pets</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="#">Messages</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="#">Management</a></li>
+          <li class="nav-item me-lg-3 mt-2 mt-lg-0">
+            <img src="/frontend/assets/fonts/icon/bell.png" alt="bell" width="22" />
+          </li>
+          <li class="nav-item d-flex align-items-center mt-2 mt-lg-0">
+            <img src="/image/photo/adopt-me.jpg" alt="profile" class="staff-profile-img me-2" />
+            <div class="text-white small lh-1">
+              <div>Dazzjin Lee</div>
+              <div>Staff Member</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container my-4">
+    <div class="staff-overview-box text-white p-4">
+      <h4 class="fw-bold mb-1">Shelter Overview</h4>
+      <p class="mb-0">Managing care for 156 animals with 23 active volunteers</p>
+    </div>
+
+
+    <div class="row mt-4 g-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="staff-stat-card bg-white border rounded-4 text-center p-4">
+          <div class="fs-1 text-primary mb-2">🐾</div>
+          <h3 class="fw-bold mb-1">156</h3>
+          <p class="text-muted mb-0">Animals in Care</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="staff-stat-card bg-white border rounded-4 text-center p-4">
+          <div class="fs-1 text-success mb-2">👥</div>
+          <h3 class="fw-bold mb-1">223</h3>
+          <p class="text-muted mb-0">Active Volunteers</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="staff-stat-card bg-white border rounded-4 text-center p-4">
+          <div class="fs-1 text-danger mb-2">❤️</div>
+          <h3 class="fw-bold mb-1">34</h3>
+          <p class="text-muted mb-0">Adoptions This Month</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="staff-stat-card bg-white border rounded-4 text-center p-4">
+          <div class="fs-1 text-warning mb-2">🔔</div>
+          <h3 class="fw-bold mb-1">8</h3>
+          <p class="text-muted mb-0">Urgent Care Needed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 g-4">
+ 
+      <div class="col-md-6">
+        <div class="bg-white border rounded-4 p-4">
+          <h5 class="fw-bold mb-3">Recent Alerts</h5>
+
+          <div class="d-flex align-items-center border rounded p-2 mb-2">
+            <span class="staff-alert-label staff-alert-urgent me-2">Urgent</span>
+            <span>Bella needs medication in 2 hours</span>
+          </div>
+          <div class="d-flex align-items-center border rounded p-2 mb-2">
+            <span class="staff-alert-label staff-alert-medical me-2">Medical</span>
+            <span>Max has vet appointment tomorrow</span>
+          </div>
+          <div class="d-flex align-items-center border rounded p-2 mb-2">
+            <span class="staff-alert-label staff-alert-update me-2">Update</span>
+            <span>New volunteer application received</span>
+          </div>
+
+          <a href="#" class="btn staff-view-dashboard-btn text-white w-100 mt-3">View Care Dashboard</a>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="bg-white border rounded-4 p-4">
+          <h5 class="fw-bold mb-3">Quick Action</h5>
+
+          <button class="btn btn-light border w-100 text-start mb-2 staff-quick-btn">🐾 Add New Pet</button>
+          <button class="btn btn-light border w-100 text-start mb-2 staff-quick-btn">👥 Manage Volunteer</button>
+          <button class="btn btn-light border w-100 text-start mb-2 staff-quick-btn">📄 Generate Reports</button>
+          <button class="btn btn-light border w-100 text-start staff-quick-btn">🗓 Scheduled Care Task</button>
+        </div>
+      </div>
+    </div>

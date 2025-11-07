@@ -1,79 +1,100 @@
-class RegisterStaff{
-    constructor(){
-        const fieldName = {
-            staff_first_name: 'staff_first_name',
-            staff_last_name: 'staff_last_name',
-            staff_email: 'staff_email',
-            staff_password: 'staff_password',
-            staff_emergency_number: 'staff_emergency_number',
-            agreed_terms: 'agreed_terms',
-            consent_background_check: 'consent_background_check',
-            wants_updates: 'wants_updates'
-        }
+export class RegisterStaff {
+  constructor() {
+    this.field = {
+      staffFName: 'staff_first_name',
+      staffLName: 'staff_last_name',
+      staffEmail: 'staff_email',
+      staffPhone: 'staff_phone',
+      staffPassword: 'staff_password',
+      staffConsent: 'staff_consents'
+    };
+    this.msgEl = null; // make message element accessible
+  }
+
+  staffSignUp() {
+    const staffForm = document.getElementById('js-staff-signup');
+    if (!staffForm) return;
+
+    let msgEl = staffForm.querySelector('.signupMessage');
+    if (!msgEl) {
+      msgEl = document.createElement('div');
+      msgEl.classList.add('signupMessage');
+      // Insert message element before the first form element
+      staffForm.insertBefore(msgEl, staffForm.firstChild);
     }
-    staffSignUp(){
-        const staff = document.getElementById('js-staff-signup');
-        if(!staff) return;  
+    this.msgEl = msgEl;
 
-        
-        let msgEl = document.querySelector('.signupMessage');
-        if (!msgEl) {
-        msgEl = document.createElement('div');
-        msgEl.classList.add('signupMessage');
-        volunteerForm.appendChild(msgEl);
-        }
-        this.msgEl = msgEl;
-
-    staff.addEventListener('submit', (e)=>{
-         e.preventDefault();
-         this.staffSubmit(staff)
+    staffForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      this.submitForm(staffForm);
     });
+  }
 
+  submitForm(staffForm) {
+    const formData = new FormData(staffForm);
+
+    const payload = {
+      staffFName: formData.get(this.field.staffFName),
+      staffLName: formData.get(this.field.staffLName),
+      staffEmail: formData.get(this.field.staffEmail),
+      staffPhone: formData.get(this.field.staffPhone),
+      staffPassword: formData.get(this.field.staffPassword),
+      staffConsent: formData.getAll(this.field.staffConsent)
+    };
+
+    if (this.validate(payload)) {
+      this.handlerFetchingBackend(payload, staffForm);
     }
-    staffSubmit(staff){
-        const formData = new FormData(staff);
+  }
 
-        const payload = {
-            staff_first_name,
-            staff_last_name,
-            staff_email,
-            staff_password,
-            staff_emergency_number,
-            consents
-        }
+  validate(payload) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^09\d{9}$/;
 
-        Object.keys(payload).forEach(index =>{
-            if(payload[index]){
-                payload[index] = formData.get(this.fieldName.payload[index]);
-            }
-            payload[6] === 'consents';
-            if(payload[index] ==='consents') payload[index] = formData.get('consents');
-        });
+    if (!payload.staffFName || !payload.staffLName) {
+      this.showMessage('Please enter your full name.', 'danger');
+      return false;
     }
-    staffValidate(){
-        const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const re = /^(\+639|09)\d{9}$/;
-
-        if(!fieldName.staff_first_name || !fieldName.staff_last_name || !fieldName.staff_email || !fieldName.staff_emergency_number || !fieldName.staff_password){
-            this.showMessage('Please fill the requirements', 'danger');
-        }
-        if(!fieldName.staff_first_name || !fieldName.staff_last_name){
-            this.showMessage('Please fill the first name and last name', 'danger');
-        }
-        if(!email.test(fieldName.staff_email)){
-            this.showMessage('invalid format', 'danger');
-        }
-        if(!re.test(fieldName.staff_emergency_number)){
-            this.showMessage('please fill the missing requirements', 'danger')
-        }
-        if(!fieldName.staff_emergency_number.length === 11){
-            this.showMessage('Phone number character must be exact 11 characters', 'danger');
-        }
-        if(!fieldName.staff_emergency_number < 6){
-            this.showMessage('Password must be at least 6 characters', 'danger');
-        }
+    if (!emailRegex.test(payload.staffEmail)) {
+      this.showMessage('Please enter a valid email address.', 'danger');
+      return false;
     }
-    showMessage(text, type = 'info') {
+    if (!payload.staffPassword || payload.staffPassword.length < 6) {
+      this.showMessage('Password must be at least 6 characters.', 'danger');
+      return false;
+    }
+    if (!phoneRegex.test(payload.staffPhone)) {
+      this.showMessage('Phone number must start with 09 and have exactly 11 digits.', 'danger');
+      return false;
+    }
+    return true;
+  }
+
+  async handlerFetchingBackend(payload, staffForm) {
+    try {
+      const res = await fetch('http://localhost:3000/api/staff/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        this.showMessage(result.message || 'Registration successful!', 'success');
+        staffForm.reset();
+      } else {
+        this.showMessage(result.message || result.error || 'Registration failed.', 'danger');
+      }
+
+      console.log('Staff Signup response:', result);
+    } catch (err) {
+      console.error('Connection error', err);
+      this.showMessage('Unable to connect to server. Please try again later.', 'danger');
+    }
+  }
+
+  showMessage(text, type = 'info') {
     if (!this.msgEl) return;
     this.msgEl.innerText = text;
     this.msgEl.className = '';
@@ -85,5 +106,4 @@ class RegisterStaff{
     );
     this.msgEl.setAttribute('role', 'alert');
   }
-    
 }

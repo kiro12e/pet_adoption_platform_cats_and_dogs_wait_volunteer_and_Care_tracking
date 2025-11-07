@@ -1,4 +1,4 @@
-    const StaffService = require('../../services/staffServices');
+    const StaffService = require('../../services/staffServices')
 
     class StaffController {
     staffValidateEmail(staffEmail) {

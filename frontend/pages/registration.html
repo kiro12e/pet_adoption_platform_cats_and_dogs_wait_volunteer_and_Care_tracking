@@ -28,7 +28,7 @@
                         <button class="btn border-dark select-staff" id="registerBtnStaff">Staff</button>
                     </div>
                 </center>
-                <form action="./registration.html" id="signupForm">
+                <form action="" id="signupForm">
                         <div class="name d-flex  gap-3">
                     <div class="input-text mb-2">
                         <p class="lead txtusername fw-medium fs-6 p-0 mb-1">First Name:</p>
@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="login-button text-center">
-                       <button class="btn btn-dark login-petadoption mb-1 p-2 w-100">Register as Pet Adopter</button>
+                       <button type="submit" class="btn btn-dark login-petadoption mb-1 p-2 w-100">Register as Pet Adopter</button>
                 </form>
                         <p class="mt-1 p-2"><a href="login-form.html" class="btn">Already have an account? <b>Sign in here</b> </a></p>
                     </div>
@@ -132,43 +132,43 @@
                 <div class="name d-flex gap-3">
                     <div class="input-text mb-2">
                         <p class="lead txtusername fw-medium fs-6 p-0 mb-1">First Name:</p>
-                        <input type="text" class="form-control form-control-lg bg-light fs-5" style="width: 295px;" placeholder="" name="firstName" required>
+                        <input type="text" class="form-control form-control-lg bg-light fs-5" style="width: 295px;" placeholder="" name="volunteer_first_name" required>
                     </div>
                     <div class="input-text mb-2">
                         <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Last Name:</p>
-                        <input type="text" class="form-control form-control-lg bg-light fs-5" style="width: 295px;" placeholder="" name="lastName" required>
+                        <input type="text" class="form-control form-control-lg bg-light fs-5" style="width: 295px;" placeholder="" name="volunteer_last_name" required>
                     </div>
                 </div>
 
                 <div class="input-text mb-2">
                     <p class="lead txtusername fw-medium fs-6 p-0 mb-2">Email:</p>
-                    <input type="email" class="form-control form-control-lg bg-light fs-5 mb-2" placeholder="" name="email" required>
+                    <input type="email" class="form-control form-control-lg bg-light fs-5 mb-2" placeholder="" name="volunteer_email" required>
                      <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Phone number:</p>
-                    <input type="tel" class="form-control form-control-lg bg-light fs-5" placeholder="" name="phone" required>
+                    <input type="tel" class="form-control form-control-lg bg-light fs-5" placeholder="" name="volunteer_phone" required>
                 </div>
                 
                 <div class="input-text mb-2">
                     <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Password:</p>
-                    <input type="password" class="form-control form-control-lg bg-light fs-5" placeholder="" name="password" required minlength="8">
+                    <input type="password" class="form-control form-control-lg bg-light fs-5" placeholder="" name="volunteer_password" required minlength="6">
                 </div>
 
                 <div class="availability m-0">
                     <p class="fw-medium">Availability</p>
                    <div class="input-checkbox mb-4 d-flex gap-4 flex-wrap">
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="weekdays" name="availability" value="weekdays">
+                        <input type="checkbox" class="form-check-input" id="weekdays" name="availability" value="Weekdays">
                         <label for="weekdays" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Weekdays</label>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="weekend" name="availability" value="weekend">
+                        <input type="checkbox" class="form-check-input" id="weekend" name="availability" value="Weekend">
                         <label for="weekend" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Weekend</label>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="morning" name="availability" value="morning">
+                        <input type="checkbox" class="form-check-input" id="morning" name="availability" value="Morning">
                         <label for="morning" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Morning</label>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="night" name="availability" value="night">
+                        <input type="checkbox" class="form-check-input" id="night" name="availability" value="Night">
                         <label for="night" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Night</label>
                     </div>
                 </div>
@@ -178,19 +178,19 @@
                     <p class="fw-medium">Interested Activities</p>
                 <div class="input-checkbox mb-4 d-flex gap-4 flex-wrap">
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="dogCare" name="activities" value="dog-care">
+                        <input type="checkbox" class="form-check-input" id="dogCare" name="interested_activities" value="Dog Care">
                         <label for="dogCare" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Dog Care</label>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="catCare" name="activities" value="cat-care">
+                        <input type="checkbox" class="form-check-input" id="catCare" name="interested_activities" value="Cat Care">
                         <label for="catCare" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Cat Care</label>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="administrative" name="activities" value="administrative">
+                        <input type="checkbox" class="form-check-input" id="administrative" name="interested_activities" value="Administrative">
                         <label for="administrative" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Administrative</label>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input" id="management" name="activities" value="management">
+                        <input type="checkbox" class="form-check-input" id="management" name="interested_activities" value="Management">
                         <label for="management" class="lead txtusername fs-6 p-0 mb-1 form-check-label">Management</label>
                     </div>
                 </div>
@@ -199,17 +199,17 @@
                 <p class="text-center">--------------------------------------------------------------------------------------------</p>
                     
                 <div class="input-checkbox mb-2 d-flex gap-2">
-                    <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                    <input type="checkbox" class="form-check-input" id="terms" name="volunteer_consents" value="agreed_terms" required>
                     <label for="terms" class="lead txtusername fs-6 p-0 mb-1 form-check-label">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
                 </div>
 
                 <div class="input-checkbox mb-2 d-flex gap-2">
-                    <input type="checkbox" class="form-check-input" id="backgroundCheck" name="backgroundCheck" required>
+                    <input type="checkbox" class="form-check-input" id="backgroundCheck" name="volunteer_consents" value="consent_background_check" required>
                     <label for="backgroundCheck" class="lead txtusername fs-6 p-0 mb-1 form-check-label">I consent to a background check (required for volunteers and staff)</label>
                 </div>
 
                  <div class="input-checkbox mb-4 d-flex gap-2">
-                    <input type="checkbox" class="form-check-input" id="updates" name="updates">
+                    <input type="checkbox" class="form-check-input" id="updates" name="volunteer_consents" value="wants_updates">
                     <label for="updates" class="lead txtusername fs-6 p-0 mb-1 form-check-label">I would like to receive updates about available pets and events</label>
                 </div>
 
@@ -242,51 +242,48 @@
                         <button class="btn btn-dark select-staff" id="registerBtnStaff3">Staff</button>
                     </div>
                 </center>
-                <form action="../../frontend/pages/login-form.html" id="js-staff-signup">
+                <form id="js-staff-signup">
                         <div class="name d-flex  gap-3">
                     <div class="input-text mb-2">
                         <p class="lead txtusername fw-medium fs-6 p-0 mb-1">First Name:</p>
-                        <input type="text" class="form-control form-control-lg bg-light fs-5"  style="width: 295px;" placeholder="">
+                        <input type="text" name="staff_first_name" class="form-control form-control-lg bg-light fs-5"  style="width: 295px;" placeholder="">
                     </div>
                     <div class="input-text mb-2">
                         <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Last Name:</p>
-                        <input type="text" class="form-control form-control-lg bg-light fs-5" style="width: 295px;" placeholder="">
+                        <input type="text" name="staff_last_name" class="form-control form-control-lg bg-light fs-5" style="width: 295px;" placeholder="">
                     </div>
                 </div>
 
                 <div class="input-text mb-2">
                     <p class="lead txtusername fw-medium fs-6 p-0 mb-2">Email:</p>
-                    <input type="email" class="form-control form-control-lg bg-light fs-5 mb-2" placeholder="">
+                    <input type="email" name="staff_email" class="form-control form-control-lg bg-light fs-5 mb-2" placeholder="">
                      <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Phone number:</p>
-                    <input type="text" class="form-control form-control-lg bg-light fs-5" placeholder="">
+                    <input type="text" name="staff_phone" class="form-control form-control-lg bg-light fs-5" placeholder="">
                 </div>
                     <div class="input-text mb-2">
                         <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Password:</p>
-                        <input type="password" class="form-control form-control-lg bg-light fs-5" placeholder="">
+                        <input type="password" name="staff_password" class="form-control form-control-lg bg-light fs-5" placeholder="">
                     </div>
                     
-                    <div class="input-text mb-4">
-                     <p class="lead txtusername fw-medium fs-6 p-0 mb-1">Emergency number:</p>
-                    <input type="text" class="form-control form-control-lg bg-light fs-5" placeholder="">
-                </div>
+                    <!-- Emergency number was in the DB schema but not used by backend, so removing for now -->
 
                     <div class="input-checkbox mb-2 d-flex gap-2">
-                        <input type="checkbox" class="form-checkbox-input" style="width: 20px;" placeholder="">
+                        <input type="checkbox" name="staff_consents" value="agreed_terms" class="form-checkbox-input" style="width: 20px;" placeholder="">
                         <p class="lead txtusername fs-6 p-0 mb-1 form-check-label">I agree to the Terms of Service and Privacy Policy</p>
                     </div>
 
                     <div class="input-checkbox mb-2 d-flex gap-2">
-                        <input type="checkbox" class="form-checkbox-input" style="width: 20px;" placeholder="">
+                        <input type="checkbox" name="staff_consents" value="consents_background_check" class="form-checkbox-input" style="width: 20px;" placeholder="">
                         <p class="lead txtusername fs-6 p-0 mb-1 form-check-label">I consent to a background check (required for volunteers and staff)</p>
                     </div>
 
                      <div class="input-checkbox mb-4 d-flex gap-2">
-                        <input type="checkbox" class="form-checkbox-input" style="width: 20px;" placeholder="">
+                        <input type="checkbox" name="staff_consents" value="wants_updates" class="form-checkbox-input" style="width: 20px;" placeholder="">
                         <p class="lead txtusername fs-6 p-0 mb-1 form-check-label">I would like to receive updates about available pets and events</p>
                     </div>
 
                     <div class="login-button text-center">
-                       <button class="btn btn-dark login-petadoption mb-1 p-2 w-100">Register as Staff</button>
+                       <button type="submit" class="btn btn-dark login-petadoption mb-1 p-2 w-100">Register as Staff</button>
                        <p class="mt-1 p-2"><a href="./login-form.html" class="btn">Already have an account? <b>Sign in here</b> </a></p>
                     </div>
                 </form>

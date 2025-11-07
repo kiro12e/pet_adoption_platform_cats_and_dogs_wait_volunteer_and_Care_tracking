@@ -2,3 +2,80 @@
     height: 40px;
     width: 40px;
 }
+
+.staff-navbar-gradient {
+      background: linear-gradient(90deg, #7a5cfb, #b46cfb);
+}
+
+.staff-overview-box {
+      background: linear-gradient(90deg, #2e19e6, #7a5cfb);
+      border-radius: 0.75rem;
+}
+
+.staff-stat-card:hover {
+      transform: scale(1.03);
+      transition: 0.3s;
+}
+
+.adopter-welcome-box {
+    background-color: #f07c00;
+    border-radius: 10px;
+}
+
+.adopter-stat-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    background: #fff;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.adopter-stat-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.adopter-activity-label {
+    font-size: 0.75rem;
+    border-radius: 12px;
+    padding: 0.2rem 0.5rem;
+    background: #f1f1f1;
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+
+.adopter-recommend-card {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+}
+
+.adopter-recommend-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.volunteer-welcome-box {
+    background: linear-gradient(90deg, #41b883, #0b3954);
+    border-radius: 0.75rem;
+    color: white;
+}
+
+
+.volunteer-stat-card {
+    background: #fff;
+    border: 1px solid #41b883;
+    border-radius: 0.75rem;
+    text-align: center;
+    transition: 0.3s;
+}
+.volunteer-stat-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
